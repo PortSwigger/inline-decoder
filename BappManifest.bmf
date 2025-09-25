@@ -1,0 +1,13 @@
+Uuid: 2ac8472f3f4149c4885186f96cc868f5
+ExtensionType: 2
+Name: Inline Decoder
+RepoName: inline-decoder
+ScreenVersion: 1.0.0
+SerialVersion: 1
+MinPlatformVersion: 2
+ProOnly: False
+Author: AI-Pentest
+ShortDescription: The extension extracts and decodes HTTP response values during Intruder attacks, depositing the results into the Comment column for easy response management. Includes several decoders.
+EntryPoint: BurpInlineDecoder.py
+BuildCommand: 
+SupportedProducts: Pro, Community
