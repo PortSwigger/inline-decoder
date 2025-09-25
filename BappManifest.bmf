@@ -7,7 +7,7 @@ SerialVersion: 1
 MinPlatformVersion: 2
 ProOnly: False
 Author: AI-Pentest
-ShortDescription: The extension extracts and decodes HTTP response values during Intruder attacks, depositing the results into the Comment column for easy response management. Includes several decoders.
+ShortDescription: Extracts and decodes HTTP response values during Intruder attacks, providing the results in the comment column.
 EntryPoint: BurpInlineDecoder.py
 BuildCommand: 
 SupportedProducts: Pro, Community

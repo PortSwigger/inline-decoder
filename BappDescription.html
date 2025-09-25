@@ -1,59 +1,35 @@
-<p>BurpInlineDecoder is a Burp Suite extension which extracts and decodes values from HTTP responses during Intruder attacks. It writes the result into the Comment column, enabling the ability to sort, grep, and reason about responses without having to leave the Intruder UI. This extension offers an experience similar to using Grep - Extract: you choose between delimiters or a regex capture group, then select a decoder. Decoders include Base64, URL-safe Base64, Hex&rarr;Text, URL decode, Gzip/Deflate, JWT header+payload, and JSON pretty printing.</p>
+<p>Inline Decoder extracts and decodes values from HTTP responses during Intruder attacks, displaying results directly
+  in the Comment column for efficient analysis without leaving the Intruder interface. The extension provides a familiar
+  Grep-Extract-style workflow with two mutually exclusive extraction modes and multiple decoding options.</p>
 
 <h2>Features</h2>
 
 <ul>
-<li>Inline decoding into Intruder: the decoded results show up in the Comment column, adjacent to payload/length/status.</li>
-<li>Two extraction modes which, like Grep-Extract, are mutually exclusive:
-  <ul>
-  <li>Between delimiters: Start after / End at.</li>
-  <li>Regex group: your regex; the first capturing group is extracted.</li>
-  </ul>
-</li>
-<li>Inclusion of decoders:
-  <ul>
-  <li>Auto (Base64), Base64, Base64 (URL-safe)</li>
-  <li>Hex &rarr; Text, URL-decode</li>
-  <li>Gzip/Deflate (zlib & gzip heuristics)</li>
-  <li>JWT header + payload (pretty-printed JSON)</li>
-  <li>JSON pretty</li>
-  </ul>
-</li>
-<li>Input sanitization for Base64/Hex, which pads and normalizes common cases.</li>
-<li>Comment control: You can choose to replace the Comment or append to existing comments.</li>
-<li>An optional row highlight for quick visual scanning.</li>
-<li>Persistent settings across Burp sessions.</li>
+  <li>Live decoding during Intruder attacks with results appearing in Comment column</li>
+  <li>Different extraction modes (mutually exclusive like Grep-Extract)</li>
+  <li>Multiple decoder options</li>
+  <li>Configurable search scope</li>
+  <li>Optional row highlighting for visual identification</li>
 </ul>
 
 <h2>Usage</h2>
 
 <ol>
-  <li>Choose one extraction mode:
+  <li>Select one extraction method:
     <ul>
-      <li>Between delimiters (start/end), <strong>or</strong></li>
-      <li>Regex group (using the first capturing group).</li>
+      <li>Between delimiters: specify start and end expressions</li>
+      <li>Regex group: provide pattern with capturing group</li>
     </ul>
   </li>
-  <li>Select a Decoder:
+  <li>Choose appropriate decoder:
     <ul>
-      <li>"Auto (Base64)" tries standard &rarr; URL-safe Base64.</li>
-      <li>"Hex &rarr; Text" strips non-hex characters.</li>
-      <li>"Gzip/Deflate" tries gzip then zlib.</li>
-      <li>"JWT header+payload" pretty-prints the first two JWT parts.</li>
-      <li>"JSON pretty" pretty-prints valid JSON.</li>
+      <li>Auto Base64 attempts standard then URL-safe Base64</li>
+      <li>Hex&rarr;Text strips non-hex characters before decoding</li>
+      <li>Gzip/Deflate tries gzip then zlib decompression</li>
+      <li>JWT decoder pretty-prints header and payload sections</li>
     </ul>
   </li>
-  <li>Scope options:
-    <ul>
-      <li>Search headers and/or Search body.</li>
-    </ul>
-  </li>
-  <li>Other options:
-    <ul>
-      <li>Replace Comment (dont append).</li>
-      <li>Highlight row.</li>
-      <li>Comment maximum length (you can limit long values).</li>
-    </ul>
-  </li>
-  <li>Run Intruder &rarr; decoded values appear in the Comment column.</li>
+  <li>Configure search scope to include headers and/or response body</li>
+  <li>Set comment preferences for replacing or appending results</li>
+  <li>Enable extension and run Intruder attacks to see decoded values in Comment column</li>
 </ol>
