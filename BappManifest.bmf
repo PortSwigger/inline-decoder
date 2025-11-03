@@ -2,8 +2,8 @@ Uuid: 2ac8472f3f4149c4885186f96cc868f5
 ExtensionType: 2
 Name: Inline Decoder
 RepoName: inline-decoder
-ScreenVersion: 1.0.0
-SerialVersion: 2
+ScreenVersion: 1.0.1
+SerialVersion: 3
 MinPlatformVersion: 2
 ProOnly: False
 Author: AI-Pentest
